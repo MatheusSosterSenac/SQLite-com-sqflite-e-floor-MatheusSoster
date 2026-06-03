@@ -1,17 +1,56 @@
 # controle_financeiro
 
-A new Flutter project.
+Aluno: Matheus Henrique Soster
 
-## Getting Started
+# Controle Financeiro
 
-This project is a starting point for a Flutter application.
+Aplicativo desenvolvido em Flutter utilizando SQLite e Floor para persistência local de dados financeiros.
 
-A few resources to get you started if this is your first Flutter project:
+## Descrição
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+O projeto tem como objetivo demonstrar a utilização do banco de dados SQLite em conjunto com o ORM Floor para armazenamento local de informações. A aplicação permite registrar lançamentos financeiros e exibi-los de forma dinâmica através do StreamBuilder.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Funcionalidades Implementadas
+
+* Cadastro de lançamentos financeiros
+* Listagem automática de lançamentos com StreamBuilder
+* Exclusão de lançamentos
+* Relacionamento entre categorias e lançamentos utilizando chave estrangeira
+* Persistência local de dados com SQLite
+* Mapeamento ORM utilizando Floor
+* Consulta SQL para cálculo de saldo total
+
+## Estrutura do Banco de Dados
+
+### Categoria
+
+* id (PK)
+* nome
+* cor
+
+### Lancamento
+
+* id (PK)
+* descricao
+* valor
+* tipo
+* data
+* categoriaId (FK)
+
+## Relacionamento
+
+Uma categoria pode possuir vários lançamentos, enquanto cada lançamento pertence a apenas uma categoria.
+
+Categoria (1) → (N) Lancamento
+
+## Tecnologias Utilizadas
+
+* Flutter
+* Dart
+* SQLite
+* Floor ORM
+* StreamBuilder
+
+## Autor
+
+Matheus Henrique Soster
